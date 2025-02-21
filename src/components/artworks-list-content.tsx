@@ -82,7 +82,7 @@ export default function ArtworksListContent() {
             const data = await response.json();
 
             let objectIDs = data.objectIDs;
-            objectIDs = objectIDs.sort(() => Math.random() - 0.5).slice(0, 25); // randomize and get only 20 IDs
+            objectIDs = objectIDs.sort(() => Math.random() - 0.5).slice(0, 25); // randomize and get only 25 out of ~50k IDs for efficiency
 
             const artworkPromises = objectIDs.map(async (objectID: number) => {
                 const artworkResponse = await fetch(
